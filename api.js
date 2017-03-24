@@ -2,6 +2,8 @@
 module.exports = {
     get_deployment: function(response) {
         var request = require('request');
+        // Expected URL format:
+        // https://$DeployUser:DeployPass@gifinator.scm.azurewebsites.net/api/deployments
         var kudu_deployment_api = process.env.KUDU_DEPLOYMENT_API || null;
         request.get(
             {
