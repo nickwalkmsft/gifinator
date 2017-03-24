@@ -54,7 +54,7 @@ function get_progress(requrl) {
     var file = re.exec(requrl) + '.gif';
    
     // do we use chokidar or roll our own?
-    chokidar.watch('p/' + file).on('all', (event, path) => {
+    chokidar.watch('p/' + file).on('all', function (event, path) {
         console.log('[FS EVENT] ' + event, path);
     });
     
